@@ -1,0 +1,23 @@
+.multitep-navigation {
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    margin-top: 25px;
+    padding: 10px 20px;
+    background: none;
+    background: #0075ff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #ffffff;
+
+    &:disabled {
+      opacity: 0.5;
+    }
+
+    &:hover {
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+  }
+}
