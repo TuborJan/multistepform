@@ -18,21 +18,21 @@ describe("Form tests", () => {
     expect(button2).toBeInTheDocument();
   });
 
-  it("back button is disabled if name and surname are empty", async () => {
+  it("back button is disabled if form is in the first step", async () => {
     render(<Form />);
 
-    const nameInput = screen.getByTestId("name");
-    const surnameInput = screen.getByTestId("surname");
+    const label = screen.getByText(/Имя/);
+    const label2 = screen.getByText(/Фамилия/);
     const backButton = screen.getByText(/Назад/);
 
-    expect(nameInput.value).toBe("");
-    expect(surnameInput.value).toBe("");
+    expect(label).toBeInTheDocument();
+    expect(label2).toBeInTheDocument();
     expect(backButton).toBeInTheDocument();
 
     await userEvent.click(backButton);
 
-    expect(nameInput.value).toBe("");
-    expect(surnameInput.value).toBe("");
+    expect(label).toBeInTheDocument();
+    expect(label2).toBeInTheDocument();
   });
 
   it("next button throw an error if name and surname are empty", async () => {
